@@ -65,14 +65,27 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    padding-left: 0;
-    margin: 0;
-    text-align: right;
+    display: flex; 
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    text-align: left;
+
 }
 
 .navbar__menu li {
     display: inline-block;
+    color:black;
 }
+
+.navbar__menu a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
 
 .navbar__menu .menu__link {
     display: block;
