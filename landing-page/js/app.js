@@ -42,6 +42,7 @@ for (let i = 0; i<sections.length; i++) {
     let list = document.createElement('li');
     let link = document.createElement('a');
     link.href='#section' + (i+1);
+    link.className = 'menu__link'
     link.innerText = title.innerText;
     list.appendChild(link);
     navbar.appendChild(list);
