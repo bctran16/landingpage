@@ -77,7 +77,6 @@ section {
 
 .navbar__menu li {
     display: inline-block;
-    color:black;
 }
 
 .navbar__menu a{
@@ -92,12 +91,12 @@ section {
     padding: 5px;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 
 .navbar__menu .menu__link:hover {
     background: #333;
-    color: #fff;
+    color: grey;
     transition: ease 0.3s all;
 }
 

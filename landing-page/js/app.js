@@ -26,9 +26,6 @@ let navbar = document.querySelector('#navbar__list');
  * 
 */
 
-
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -49,6 +46,16 @@ for (let i = 0; i<sections.length; i++) {
 }
 
 // Add class 'active' to section when near top of viewport
+document.addEventListener("scroll", event =>{
+    let elems = document.querySelectorAll('section');
+    elems.forEach(elem => {
+        elem.classList.remove('your-active-class');
+        let rect = elem.getBoundingClientRect();
+        if (document.elementFromPoint(rect.x, rect.y)!==null) {
+            elem.classList.add('your-active-class');
+        }
+    })
+})
 
 
 // Scroll to anchor ID using scrollTO event
@@ -61,31 +68,6 @@ for (let i = 0; i<sections.length; i++) {
 */
 // Build menu 
 let mainLinks = document.querySelectorAll('nav ul li a');
-
-document.addEventListener("mouseover", event => { 
-    let elems = document.querySelectorAll(':hover');
-    if (elems[3].tagName==='SECTION'){
-        let text =elems[3].querySelector('h2').innerText;
-        let li = navbar.querySelectorAll('a');
-        for (let i = 0; i<li.length; i++)
-        {
-            if(li[i].innerText===text){
-                li[i].style.color = 'salmon';
-                li[i].style.textShadow = '0 0 50px red';
-            }
-        }   
-    }
-});
-
-document.addEventListener("mouseout", event=> {
-    let li = navbar.querySelectorAll('a');
-        for (let i = 0; i<li.length; i++)
-        {
-                li[i].style.color = 'white';
-                li[i].style.textShadow = 'none';
-        }
-}); 
-
 
 // Scroll to section on link click
 
